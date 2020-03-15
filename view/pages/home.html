@@ -1,0 +1,32 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>URL Shortener with Golang</title>
+  <link rel="stylesheet" href="/css/home-page.css">
+
+  <meta name="theme-color" content="#fafafa">
+</head>
+
+<body>
+    <p>You can use this tool to shorten the url. This tool developed with golang language.</p>
+    {{ if .URL }}
+      {{.URL}}
+    {{ end }}
+
+    {{ if .Message }}
+      {{.Message}}
+    {{ end }}
+    <h1>Enter Your URL</h1>
+    <form action="/create-url" method="POST">
+      <input type="text" name="url" class="question" id="nme" required autocomplete="off" />
+      <label for="nme"><span>What's your URL?</span></label>
+      <input type="submit" value="Submit!" />
+    </form>
+</body>
+</html>
